@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clases de Violín - Academia de Música Elpida</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ee71f8, #ce93d8); /* Degradado morado */
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        header {
+            background-color: #4a148c; /* Morado oscuro */
+            padding: 20px;
+            color: white;
+            width: 100%;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        main {
+            padding: 20px;
+            width: 80%;
+            max-width: 800px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #ffcc00;
+            font-size: 2.5em;
+        }
+
+        .menu-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            background-color: #4a148c;
+            padding: 10px 0;
+            margin-top: 10px;
+            text-align: center;
+            border: 2px solid black;
+            box-sizing: border-box;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            background-color: #8e24aa;
+            color: white;
+            padding: 10px 20px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .dropbtn:hover {
+            background-color: #7b1fa2;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 150px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .dropdown-content a {
+            color: #2c3e50;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        footer {
+            background-color: #4a148c;
+            padding: 10px;
+            color: white;
+            width: 100%;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .cta-button {
+            background-color: #d81b60;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 1.2em;
+        }
+
+        .cta-button:hover {
+            background-color: #ad1457;
+        }
+
+        .info-box {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    
+<header>
+    <h1>Clases de Violín en Elpida</h1>
+</header>
+
+<div class="menu-container">
+    <div class="dropdown">
+        <button class="dropbtn">Menú</button>
+        <div class="dropdown-content">
+            <a href="toto.html">Inicio</a>
+            <a href="pagina2elpida.html">Acerca de Elpida Music</a>
+            <a href="pagina3elpida.html">Regístrate</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Productos</button>
+        <div class="dropdown-content">
+            <a href="Guitarras Elpida.html">Guitarras</a>
+            <a href="Pianos Elpida.html">Pianos</a>
+            <a href="Baterias Elpida.html">Baterías</a>
+            <a href="Instrumentos de Cuerda Elpida.html">Violines</a>
+            <a href="instrumentos de viento Elpida.html">Instrumentos de viento</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Clases</button>
+        <div class="dropdown-content">
+            
+            <a href="pagina_piano.html">Clases de piano</a> 
+            <a href="pagina_guitarra.html">Clases de guitarra</a>
+            <a href="pagina_bateria.html">Clases de batería</a>
+            <a href="pagina_canto.html">Clases de canto</a>
+            <a href="pagina_teoria.html">Clases de teoría musical</a>
+        </div>
+    </div>
+</div>
+
+<main>
+    <h2>¡Descubre la Belleza del Violín!</h2>
+    <div class="info-box">
+        <p>El violín es uno de los instrumentos más expresivos y bellos de la música. Desde la música clásica hasta el folk y el jazz, su sonido ha cautivado a generaciones. Aprender a tocar el violín no solo desarrolla habilidades técnicas, sino también disciplina y sensibilidad artística.</p>
+        <img src="https://wallpapers.com/images/hd/violin-icp6av3hplrdwxi4.jpg" alt="violín">
+    </div>
+
+    <div class="info-box">
+        <h3>Beneficios de Aprender Violín</h3>
+        <ul>
+            <li>Desarrolla precisión y coordinación.</li>
+            <li>Mejora la concentración y la memoria.</li>
+            <li>Fomenta la disciplina y la paciencia.</li>
+            <li>Permite interpretar una gran variedad de estilos musicales.</li>
+        </ul>
+    </div>
+    
+    <div class="info-box">
+        <h3>Nuestras Clases</h3>
+        <p>En la Academia de Música Elpida, ofrecemos clases de violín para todos los niveles. Desde principiantes hasta avanzados, nuestros instructores te enseñarán técnica, teoría y repertorio para que domines este hermoso instrumento.</p>
+        <p>¡Empieza tu viaje musical con nosotros!</p>
+
+        <img src="https://st2.depositphotos.com/3299557/7755/i/450/depositphotos_77552076-stock-photo-violin-and-bow-on-piano.jpg" alt="violín2">
+    </div>
+
+    
+    <h2>¡Inscríbete Ahora!</h2>
+    <p>Completa el siguiente formulario y comienza tu aventura con el violín.</p>
+    <form action="#" method="post">
+        <input type="text" placeholder="Tu Nombre" required>
+        <input type="email" placeholder="Tu Correo Electrónico" required>
+        <input type="text" placeholder="Tu Número de Teléfono" required>
+        <button type="submit" class="cta-button">Enviar</button>
+    </form>
+</main>
+
+<footer>
+    <p>&copy; 2024 Academia de Música Elpida. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>

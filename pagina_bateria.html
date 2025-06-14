@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clases de Batería - Academia de Música Elpida</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #000000, #1a1a1a); /* Fondo oscuro */
+            color: #e0e0e0; /* Texto claro */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        header {
+            background-color: #c62828; /* Rojo vibrante */
+            padding: 20px;
+            width: 100%;
+            font-size: 2.5em; /* Tamaño de letra grande */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        main {
+            padding: 20px;
+            width: 80%;
+            max-width: 800px;
+            background-color: rgba(50, 50, 50, 0.9); /* Fondo gris oscuro semitransparente */
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        h2 {
+            color: #ffcc00; /* Color amarillo fuerte para subtítulo */
+            font-size: 2.5em; /* Tamaño de letra grande */
+            margin: 10px 0;
+        }
+
+
+              .menu-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            background-color: #c62828;
+            padding: 10px 0;
+            margin-top: 10px;
+            text-align: center;
+            border: 2px solid black;
+            box-sizing: border-box;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            background-color: #1c2833;
+            color: white;
+            padding: 10px 20px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .dropbtn:hover {
+            background-color: #27ae60;
+        }
+         
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 150px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .dropdown-content a {
+            color: #2c3e50;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+
+
+        footer {
+            background-color: #c62828; /* Mismo rojo vibrante para el pie de página */
+            padding: 10px;
+            width: 100%;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .cta-button {
+            background-color: #00e676; /* Verde neón */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 1.2em; /* Tamaño de letra del botón */
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            background-color: #00c853; /* Verde neón más oscuro */
+        }
+
+        .info-box {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ffcc00; /* Borde amarillo */
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.1); /* Fondo claro semitransparente */
+        }
+
+        img {
+            max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+            height: auto; /* Mantiene la proporción de la imagen */
+            border-radius: 8px; /* Bordes redondeados a la imagen */
+        }
+    </style>
+</head>
+<body>
+    
+<header>
+    <h1>Clases de Batería en Elpida</h1>
+    <a href="prueba.html" class="back-link" style="font-size: 0.8em; color: black; text-decoration: none;">Página Principal</a>
+</header>
+
+ <div class="menu-container">
+    <div class="dropdown">
+        <button class="dropbtn">Menú</button>
+        <div class="dropdown-content">
+            <a href="toto.html">Inicio</a>
+            <a href="pagina2elpida.html">Acerca de Elpida Music</a>
+            <a href="pagina3elpida.html">Regístrate</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Productos</button>
+        <div class="dropdown-content">
+            <a href="Guitarras Elpida.html">Guitarras</a>
+            <a href="Pianos Elpida.html">Pianos</a>
+            <a href="Baterias Elpida.html">Baterías</a>
+            <a href="Instrumentos de Cuerda Elpida.html">Violines</a>
+            <a href="instrumentos de viento Elpida.html">Instrumentos de viento</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Clases</button>
+        <div class="dropdown-content">
+            
+            <a href="pagina_piano.html">Clases de piano</a> 
+            <a href="pagina_guitarra.html">Clases de guitarra</a>
+            <a href="pagina_violin.html">Clases de violin</a>
+            <a href="pagina_canto.html">Clases de canto</a>
+            <a href="pagina_teoria.html">Clases de teoría musical</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<main>
+    <h2>¡Ritmo y Pasión en Cada Golpe!</h2>
+    <div class="info-box">
+        
+        <p>La batería es el corazón de la música. Su ritmo marca el pulso y da vida a cada canción. Aprender a tocar la batería no solo es emocionante, sino que también mejora tu coordinación y creatividad.</p>
+        
+        <img src="https://img.freepik.com/fotos-premium/baquetas-tambores-electronicos-conjunto-holografico-futurista-creado-ai-generativo_124507-162652.jpg" alt="batería">
+    </div>
+
+    <div class="info-box">
+        <h3>Beneficios de Aprender Batería</h3>
+        <ul>
+            <li>Mejora la coordinación y el ritmo.</li>
+            <li>Fomenta la autoexpresión y la creatividad.</li>
+            <li>Desarrolla habilidades de trabajo en equipo.</li>
+            <li>Es una forma divertida de hacer ejercicio.</li>
+        </ul>
+    </div>
+    
+    <div class="info-box">
+        <h3>Nuestras Clases</h3>
+        <p>En la Academia de Música Elpida, ofrecemos clases de batería para todos los niveles. Nuestros instructores te guiarán en técnicas, ritmos y la interpretación de tus canciones favoritas.</p>
+        <p>¡Únete a nosotros y descubre el emocionante mundo de la batería!</p>
+    </div>
+    
+    <h2>¡Inscríbete Ahora!</h2>
+    <p>Completa el siguiente formulario y comienza a tocar la batería en poco tiempo.</p>
+    <form action="#" method="post">
+        <input type="text" placeholder="Tu Nombre" required>
+        <input type="email" placeholder="Tu Correo Electrónico" required>
+        <input type="text" placeholder="Tu Número de Teléfono" required>
+        <button type="submit" class="cta-button">Enviar</button>
+    </form>
+</main>
+
+<footer>
+    <p>&copy; 2024 Academia de Música Elpida. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>

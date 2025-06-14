@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pianos Elpida</title>
+  <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+           background: linear-gradient(135deg, #d3d3d3, #f0f0f0); /* Gris claro */
+            color: #2c3e50;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: background-color 0.5s ease;
+        }
+
+        header {
+            background-color: #2ecc71;
+            padding: 2px;
+            color: white;
+            width: 100%;
+            border: 2px solid black;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        h1 {
+            margin: 1;
+            font-size: 3em;
+        }
+
+        .menu-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            background-color: #2ecc71;
+            padding: 10px 0;
+            margin-top: 10px;
+            text-align: center;
+            border: 2px solid black;
+            box-sizing: border-box;
+        }
+
+        .products-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 10px;
+            padding: 20px;
+        }
+
+
+        .product {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .product-title {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 10px;
+            font-size: 18px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            background-color: #2ecc71;
+            color: white;
+            padding: 10px 20px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px 
+        }
+
+        .dropbtn:hover {
+            background-color: #27ae60;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 150px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .dropdown-content a {
+            color: #2c3e50;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+       
+
+        .container {
+            max-width: 850px;
+            margin: 20px auto;
+            padding: 50px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #ffcc00;
+            text-align: center;
+            font-size: 2.5em;
+        }
+
+        footer {
+            background-color: #2ecc71;
+            padding: 10px;
+            color: white;
+            width: 100%;
+            text-align: center;
+            margin-top: auto;
+            border: 2px solid black;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Pianos Elpida</h1>
+</header>
+<div class="menu-container">
+    <div class="dropdown">
+        <button class="dropbtn">Menú</button>
+        <div class="dropdown-content">
+            <a href="Elpida Musical ensayo 6.html">principal</a>
+            <a href="toto.html">Inicio</a>
+            <a href="pagina2elpida.html">Acerca de Elpida Music</a>
+            <a href="pagina3elpida.html">Regístrate</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Productos</button>
+        <div class="dropdown-content">
+            <a href="Guitarras Elpida.html">Guitarras</a>
+            <a href="Baterias Elpida.html">Baterías</a>
+            <a href="Instrumentos de Cuerda Elpida.html">violines</a>
+            <a href="instrumentos de viento Elpida.html">instrumentos de viento</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Clases</button>
+        <div class="dropdown-content">
+            <a href="pagina_guitarra.html">Clases de guitarra</a>
+            <a href="pagina_piano.html">Clases de piano</a>
+            <a href="pagina_bateria.html">Clases de batería</a>
+            <a href="pagina_violin.htm">Clases de violín</a>
+            <a href="pagina_canto.html">Clases de canto</a>
+            <a href="pagina_teoria.html">Clases de teoría musical</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+        <img 
+        src="C:\Users\Hp\Pictures\imagen para pagina web elpida2.PNG" 
+        width="800" 
+        height="500" 
+        alt="Día de la Música" 
+        id="firstImage">
+    
+    
+</div>
+
+
+<!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <style>
+    .carousel-inner img {
+      width: 100%;
+      height: 50%;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <br>
+  <div id="theCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicadores -->
+    <ol class="carousel-indicators">
+      <li data-target="#theCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#theCarousel" data-slide-to="1"></li>
+      <li data-target="#theCarousel" data-slide-to="2"></li>
+      <li data-target="#theCarousel" data-slide-to="3"></li>
+      <li data-target="#theCarousel" data-slide-to="4"></li>
+      <li data-target="#theCarousel" data-slide-to="5"></li>
+      <li data-target="#theCarousel" data-slide-to="6"></li>
+      <li data-target="#theCarousel" data-slide-to="7"></li>
+    </ol>
+
+    <style>
+  .carousel-inner img {
+    width: 100%; /* Ajusta el ancho al contenedor */
+    height: 500px; /* Altura fija para todas las imágenes */
+    object-fit: cover; /* Recorta la imagen manteniendo la proporción */
+  }
+</style>
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="https://hinves.com/wp-content/uploads/2018/07/Que-piano-elegir.-Diferencias-entre-SteinwaySons-y-Yamaha.jpg" alt="suma.c">     
+       <div class="carousel-caption">
+        <h3>Establece el estandar por el cual se miden los verticales</h3>
+        <p>Elpida</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="https://hinves.com/wp-content/uploads/2023/06/como-mantener-tu-piano-en-perfectas-condiciones.jpg" alt="suma.c">
+      <div class="carousel-caption">
+        <h3>El Compañero perfecto para sacar a musica que llevas dentro</h3>
+        <p>Concurso</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="https://thumbs.dreamstime.com/b/teclado-sintetizador-de-ne%C3%B3n-futurista-con-iluminaci%C3%B3n-concepto-musical-cyberpunk-del-piano-ilustraci%C3%B3n-alta-calidad-274520683.jpg " alt="Pintura">
+      <div class="carousel-caption">
+        <h3> Encuentra el piano mas avansado del mundo</h3>
+        <p>Curso</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="https://www.thepiano.sg/sites/thepiano.sg/files/styles/content_section_image/public/thepiano_images/content_section/2016/09/21/crystal-piano.jpg" alt="Diseño Gráfico">
+      <div class="carousel-caption">
+        <h3>Transforma como tocas y practicas </h3>
+        <p>Curso</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<a class="left carousel-control" href="#theCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Anterior</span>
+    </a>
+    <a class="right carousel-control" href="#theCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Siguiente</span>
+    </a>
+  </div>
+</div>
+
+
+    <div class="container">
+    <div class="container">
+    <h1>Mira todos nuestros modelos</h1>
+    <p>La esencia de Elpida está en su sonido. Con un equilibrio perfecto entre tradición y modernidad, creamos instrumentos que elevan la experiencia musical a otro nivel.</p>
+
+    </div>
+
+    <div class="products-container">
+        <div class="product">
+            <img src=" https://mx.yamaha.com/es/files/B83D48F2A20D4B90ADE5109C98A5AB87_12073_c82714271f2b8dd3101718e65b7a81c7.jpg?impolicy=resize&imwid=2400&imhei=2400" alt="Pianos">
+            <div class="product-title">Grand pianos</div>
+        </div>
+        <div class="product">
+            <img src=" https://www.corralespianos.com/wp-content/uploads/2014/05/piano-vertical-bosendorfer-modelo-130-cl-con-banqueta.jpg ">
+            <div class="product-title">Piano vertical</div>
+        </div>
+        <div class="product">
+            <img src=" https://www.freeholdmusic.com/wp-content/uploads/2018/01/yamaha-gb1k-polished-white.jpg " alt="Instrumentos de Viento">
+            <div class="product-title">disklavier</div>
+        </div>
+        <div class="product">
+            <img src=" https://mx.yamaha.com/es/files/U1JSG2_540x540_cc373a640f487fb9d84801166e53b95d.jpg?impolicy=large&imwid=735&imhei=735 " alt="Instrumentos de Arco">
+            <div class="product-title">Silent piano</div>
+        </div>
+        <div class="product">
+            <img src=" https://static.roland.com/assets/images/products/gallery/rp107_angle_left_gal.jpg " alt="Percusión">
+            <div class="product-title">Digital</div>
+        </div>
+        <div class="product">
+            <img src=" https://servimusic.mx/wp-content/uploads/2024/06/AP470BN-B.jpg " alt="Pianos">
+            <div class="product-title"> Clavinova </div>
+        </div>
+    </div>
+        <div class="product">
+            <img src=" https://m.media-amazon.com/images/I/61g8zL5IqCL._AC_UF1000,1000_QL80_.jpg " alt="imagen5" class="table-img" alt="Instrumentos Digitales">
+            <div class="product-title"> Arius </div>
+        </div>
+        <div class="product">
+            <img src="https://www.gonher.com/wp-content/uploads/GrupoGonher/ITCASPXS7000BK.jpg " alt="Pianos">
+            <div class="product-title"> Portable grand </div>
+        </div>
+        <div class="product">
+            <img src=" https://http2.mlstatic.com/D_NQ_NP_616665-MLU69916240798_062023-O.webp " alt="Pianos">
+            <div class="product-title"> Serie P </div>
+        </div>
+
+            <div class="container">
+       <h1> Proximos Modelos</h1>
+       </div>
+
+        <div class="product">
+            <img src=" https://luxury-pianos.com/wp-content/uploads/2024/01/Lumiere-transparent-acrylic-piano_02.webp " alt="Pianos">
+            <div class="product-title"> Piano Luxur</div>
+        </div>
+
+        <div class="product">
+            <img src="https://mx.yamaha.com/es/files/R01_540x540_540x540_eaa9d356f331f8816bc16d1f10bee016.jpg " alt="Pianos">
+            <div class="product-title"> Piano Modus </div>
+        </div>
+
+        <div class="product">
+            <img src="https://www.pianospain.com/wp-content/uploads/2021/02/ps-lucid-xtravaganza-1.jpg " alt="Pianos">
+            <div class="product-title"> Lucius </div>
+        </div>
+
+         <div class="product">
+            <img src=" https://i.pinimg.com/736x/9b/16/66/9b16665dc849db974bcfacaecfa50141.jpg " alt="Pianos">
+            <div class="product-title"> Minus black </div>
+        </div>
+
+         <div class="product">
+            <img src=" https://img.freepik.com/fotos-premium/piano-cola-triangular-futurista_841014-7860.jpg " alt="Pianos">
+            <div class="product-title"> Astralis Grand </div>
+        </div>
+
+
+
+
+    </div>
+
+
+<footer>
+    <p>&copy; 2025 Elpida Academia Musical. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>

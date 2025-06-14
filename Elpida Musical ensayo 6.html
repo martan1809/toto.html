@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elpida Musical</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+
+</head>
+
+
+  <style>
+.menu-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    background-color: #fdfefe;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    position: relative;
+    z-index: 50; /* Para que esté encima del carrusel */
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background: none;
+    color: #2c3e50;
+    padding: 10px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.dropbtn::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #27ae60;
+    transition: width 0.3s ease;
+}
+
+.dropbtn:hover {
+    color: #27ae60;
+}
+
+.dropbtn:hover::after {
+    width: 100%;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 180px;
+    padding: 10px 0;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+    border-radius: 8px;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dropdown-content a {
+    color: #2c3e50;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #f4f4f4;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+ body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+.section-title {
+      text-align: center;
+      font-size: 2em;
+      margin: 40px 0 20px;
+      font-weight: bold;
+    }
+
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 0 20px 40px;
+    }
+
+    .product-card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 200px;
+      transition: transform 0.2s ease;
+    }
+
+    .product-card:hover {
+      transform: scale(1.05);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    .product-name {
+      padding: 15px;
+      font-weight: 600;
+    }
+
+    .recent-views-section {
+      background-color: #e8e8e8;
+      padding: 40px 20px;
+    }
+
+    .recent-views-title {
+      text-align: center;
+      font-size: 1.8em;
+      margin-bottom: 30px;
+      font-weight: bold;
+    }
+
+    .recent-views {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .recent-card {
+      display: flex;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      width: 350px;
+      transition: transform 0.2s ease;
+    }
+
+    .recent-card:hover {
+      transform: scale(1.02);
+    }
+
+    .recent-card img {
+      width: 120px;
+      height: auto;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+
+    .recent-info {
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .recent-info h3 {
+      margin: 0 0 10px;
+      font-size: 1.1em;
+    }
+
+    .recent-info p {
+      margin: 0;
+      font-size: 0.9em;
+      color: #555;
+    }
+
+    .view-button {
+      margin-top: 10px;
+      padding: 6px 12px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 0.9em;
+      cursor: pointer;
+      width: fit-content;
+    }
+
+    .view-button:hover {
+      background-color: #555;
+    }
+
+    
+
+    .testimonial-section {
+      max-width: 800px;
+      margin: 50px auto;
+      background-color: #fff;
+      padding: 40px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonial {
+      display: none;
+      text-align: center;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .testimonial.active {
+      display: block;
+    }
+
+    .testimonial p {
+      font-size: 1.1em;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .testimonial h3 {
+      margin: 10px 0 5px;
+      font-size: 1.2em;
+      color: #555;
+    }
+
+    .stars {
+      color: #FFD700;
+      font-size: 1.3em;
+    }
+
+    .nav-buttons {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+
+    .nav-buttons button {
+      background: rgba(0,0,0,0.1);
+      border: none;
+      font-size: 2em;
+      padding: 5px 15px;
+      cursor: pointer;
+      color: #444;
+      transition: background 0.2s;
+    }
+    .nav-buttons button:hover {
+      background: rgba(0,0,0,0.2);
+    }
+
+   .container {
+      text-align: center;
+      padding-top: 30px;
+    }
+
+    #firstImage {
+      display: block;
+      margin: 20px auto;
+      max-width: 90%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+
+     .product-grid {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .product {
+      position: relative;
+      width: 250px;
+      height: 250px;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      background-color: #fff;
+      cursor: pointer;
+    }
+
+    .product img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.4s ease;
+    }
+
+    .product .front {
+      opacity: 1;
+    }
+
+    .product:hover .front {
+      opacity: 0;
+    }
+
+    .product .back {
+      opacity: 0;
+    }
+
+    .product:hover .back {
+      opacity: 1;
+    }
+
+    .product-name {
+      text-align: center;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .recent-views-section {
+  margin-top: 100px
+}
+
+.testimonial-section {
+  margin-top: 100px
+}
+
+.product-grid {
+  margin-top: 65px
+}
+
+.product-grid {
+  margin-top: 75px
+}
+
+.hero {
+      background-color: #fff;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .hero h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.2em;
+      max-width: 800px;
+      margin: 0 auto 30px;
+    }
+    .section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .section h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .section p {
+      font-size: 1.1em;
+      line-height: 1.6;
+      text-align: center;
+    }
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      padding-top: 25px;
+      height: 0;
+      margin-top: 30px;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2em;
+      }
+      .section h2 {
+        font-size: 1.5em;
+      }
+    }
+
+
+    }
+    .section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .section h2 {
+      font-size: 2.5em;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .feature {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 60px;
+      align-items: center;
+    }
+    .feature:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    .feature img {
+      flex: 1 1 40%;
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin: 10px;
+    }
+    .feature-content {
+      flex: 1 1 50%;
+      padding: 20px;
+    }
+    .feature-content h3 {
+      font-size: 1.8em;
+      margin-bottom: 15px;
+    }
+    .feature-content p {
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+    .all-access {
+      text-align: center;
+      background-color: #fff;
+      padding: 40px 20px;
+      border-top: 1px solid #ddd;
+    }
+    .all-access h3 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    .all-access p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+    .cta-button {
+      background-color: #0073e6;
+      color: #fff;
+      padding: 15px 30px;
+      font-size: 1.1em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .cta-button:hover {
+      background-color: #005bb5;
+    }
+    @media (max-width: 768px) {
+      .feature {
+        flex-direction: column;
+      }
+      .feature:nth-child(even) {
+        flex-direction: column;
+      }
+    }
+
+footer {
+            background-color: #17202a 
+;
+            padding: 10px;
+            color: white;
+            width: 100%;
+            text-align: center;
+            margin-top: auto;
+            border: 2px solid black;
+            box-sizing: border-box;
+        }
+
+
+
+</style>
+
+
+
+
+
+<body class="bg-gray-100 font-sans">
+    
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="flex justify-between items-center px-6 py-4">
+            <h1 class="text-2xl font-semibold">Elpida Musical</h1>
+
+
+
+
+            <nav>
+                
+<div class="menu-container">
+    <div class="dropdown">
+        <button class="dropbtn">Menú</button>
+        <div class="dropdown-content">
+            <a href="toto.html">inicio</a>
+            <a href="pagina2elpida.html">Acerca de Elpida music</a>
+            <a href="pagina3elpida.html">Regístrate</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Productos</button>
+        <div class="dropdown-content">
+            <a href="Guitarras Elpida.html">Guitarras</a>
+            <a href="Pianos Elpida.html">Pianos</a>
+            <a href="Baterias Elpida.html">Baterías</a>
+            <a href="Instrumentos de Cuerda Elpida.html">violines</a>
+             <a href="instrumentos de viento Elpida.html">instrumentos de viento</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Clases</button>
+        <div class="dropdown-content">
+            <a href="pagina_guitarra.html">Clases de guitarra</a>
+            <a href="pagina_piano.html">Clases de piano</a>
+            <a href="pagina_bateria.html">Clases de batería</a>
+            <a href="pagina_violin.htm">Clases de violin</a>
+            <a href="pagina_canto.html">Clases de canto</a>
+            <a href="pagina_teoria.html">Clases de teoria musical</a>
+        </div>
+    </div>
+</div>
+
+          
+        
+
+<!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+            </nav>
+
+
+
+
+
+
+
+
+            <div class="flex space-x-4">
+                <span class="cursor-pointer">🔍</span>
+                <span class="cursor-pointer">🛒</span>
+                <span class="cursor-pointer">👤</span>
+            </div>
+        </div>
+    </header>
+
+
+
+
+    
+  
+   
+<div class="swiper-container my-10">
+    <div class="swiper-wrapper">
+
+
+
+        <div class="swiper-slide">
+            <img src="C:\Users\Hp\Pictures\primera imagen del carrusel martin.PNG" class="w-full h-96 object-cover" alt="Instrumentos Korg">
+        </div>
+        <div class="swiper-slide">
+            <img src="C:\Users\Hp\Pictures\segunda imagen del carrusel martin.PNG" class="w-full h-96 object-cover" alt="Yamaha">
+        </div>
+        <div class="swiper-slide">
+            <img src="C:\Users\Hp\Pictures\tercera imagen del carrusel martin.PNG" class="w-full h-96 object-cover" alt="Digitech">
+        </div>
+        <div class="swiper-slide">
+            <img src="C:\Users\Hp\Pictures\cuarta imagen del carrusel martin.PNG" class="w-full h-96 object-cover" alt="Baterías">
+        </div>
+        <div class="swiper-slide">
+            <img src="C:\Users\Hp\Pictures\quinta imagen del carrusel martin.PNG" class="w-full h-96 object-cover" alt="Guitarras Fender">
+        </div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+</div>
+
+
+
+
+
+
+<body>
+
+
+
+
+
+
+
+<div class="container"style="margin-top: 80px;">
+    <h1></h1>
+</div>
+<img 
+        src=" C:\Users\Hp\Pictures\Captura de elpida2.PNG " 
+        width="1000" 
+        height="600" 
+        alt="Día de la Música" 
+        id="firstImage">
+
+
+
+
+
+
+
+
+
+<!-- Título separado con margen -->
+<h2 style="text-align:center; margin-top: 100px;">Recien llegado</h2>
+
+  
+
+  <div class="product-grid">
+
+    <!-- Producto 1 -->
+    <div>
+      <div class="product">
+        <img src="https://musicvilla.com/cdn/shop/files/RolandDrums_1.jpg?v=1730840762&width=1800" class="front" alt="Batería frontal 1">
+        <img src="https://musicvilla.com/cdn/shop/files/RolandDrums_2.jpg?v=1730840762&width=540" class="back" alt="Batería lateral 1">
+      </div>
+      <div class="product-name">Elpida VQD106 Electric</div>
+    </div>
+
+    <!-- Producto 2 -->
+    <div>
+      <div class="product">
+        <img src=" https://musicvilla.com/cdn/shop/files/2D7AD69B-68E5-4FB5-98DA-D378C9E71403.jpg?v=1746998464&width=1800 " class="front" alt="Batería frontal 2">
+        <img src=" https://musicvilla.com/cdn/shop/files/A5A65448-4E36-4676-A827-B5CB201DBC78.jpg?v=1746998464&width=540 " class="back" alt="Batería lateral 2">
+      </div>
+      <div class="product-name">Elpida Custom</div>
+    </div>
+
+    <!-- Producto 3 -->
+    <div>
+      <div class="product">
+        <img src="https://musicvilla.com/cdn/shop/files/AC8BD14B-9F4B-4FA8-86BC-8CF6C7C488C7.jpg?v=1747079450&width=1800" class="front" alt="Batería frontal 3">
+        <img src=" https://musicvilla.com/cdn/shop/files/DE9BA86F-8753-4A60-B29C-3820EA653682.jpg?v=1747079450&width=540 " class="back" alt="Batería lateral 3">
+      </div>
+      <div class="product-name">Elpida genesis bajo</div>
+    </div>
+
+    <!-- Producto 4 -->
+    <div>
+      <div class="product">
+        <img src="https://musicvilla.com/cdn/shop/products/CP88_1.jpg?v=1649171011&width=1800" class="front" alt="Batería frontal 4">
+        <img src=" https://musicvilla.com/cdn/shop/products/CP88_2.jpg?v=1649171011&width=540 " class="back" alt="Batería lateral 4">
+      </div>
+      <div class="product-name">Elpida CP88 piano</div>
+    </div>
+
+  </div>
+
+
+
+
+
+  <div class="recent-views-section">
+    <div class="recent-views-title">Vistas Recientes</div>
+
+    <div class="recent-views">
+      <div class="recent-card">
+        <img src="https://musicvilla.com/cdn/shop/files/3D6B409E-6CE1-47E5-BDFF-04562DE9BEC7.jpg?v=1746828211&width=540" alt="Guitar 1">
+        <div class="recent-info">
+          <h3>Elpida Player Strat guitar</h3>
+          <p>$849.99</p>
+          <button class="view-button">View Again</button>
+        </div>
+      </div>
+
+      <div class="recent-card">
+        <img src="https://musicvilla.com/cdn/shop/products/Pocket_black.jpg?v=1661878798&width=1800" alt="bateria 1">
+        <div class="recent-info">
+          <h3>Elpida SG Standard</h3>
+          <p>$499.00</p>
+          <button class="view-button">View Again</button>
+        </div>
+      </div>
+
+      <div class="recent-card">
+        <img src="https://musicvilla.com/cdn/shop/files/Korg-Microkorg2-Synth-_-Vocoder_1.jpg?v=1745252822&width=1800" alt="piano">
+        <div class="recent-info">
+          <h3>elpida GS Mini</h3>
+          <p>$699.00</p>
+          <button class="view-button">View Again</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+<div class="testimonial-section">
+    <div class="testimonial active">
+      <p>“Estoy muy contento con mi nueva guitarra acústica que compré en Elpida. El sonido es impecable y la atención al cliente fue excelente. ¡Totalmente recomendado!”</p>
+      <h3>Carlos Méndez – Tapachula</h3>
+      <div class="stars">★★★★★</div>
+    </div>
+
+    <div class="testimonial">
+      <p>“Tomé clases de piano con ellos y quedé encantada. Los profesores son muy pacientes y profesionales. Además, el teclado que adquirí superó mis expectativas.”</p>
+      <h3>Andrea Salazar – Tuxtla Gutiérrez</h3>
+      <div class="stars">★★★★★</div>
+    </div>
+
+    <div class="testimonial">
+      <p>“Compré una batería para mi hijo y estamos fascinados. Desde el primer día, el equipo fue muy amable y me ayudaron a elegir lo mejor. Calidad y servicio.”</p>
+      <h3>Luis Fernando Ruiz – Comitán</h3>
+      <div class="stars">★★★★★</div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevTestimonial()">❮</button>
+      <button onclick="nextTestimonial()">❯</button>
+    </div>
+  </div>
+
+  <script>
+    const testimonials = document.querySelectorAll('.testimonial');
+    let index = 0;
+
+    function showTestimonial(i) {
+      testimonials.forEach((testimonial, idx) => {
+        testimonial.classList.remove('active');
+        if (idx === i) testimonial.classList.add('active');
+      });
+    }
+
+    function nextTestimonial() {
+      index = (index + 1) % testimonials.length;
+      showTestimonial(index);
+    }
+
+    function prevTestimonial() {
+      index = (index - 1 + testimonials.length) % testimonials.length;
+      showTestimonial(index);
+    }
+
+    // Auto slide every 6 seconds
+    setInterval(nextTestimonial, 6000);
+  </script>
+
+
+<div class="container">
+    <h1>Ubicacion</h1>
+</div>
+<img 
+        src=" C:\Users\Hp\Pictures\Captura de la ubicacion de elpida.PNG" 
+        width="1200" 
+        height="1000" 
+        alt="Día de la Música" 
+        id="firstImage">
+
+
+
+
+
+  
+
+
+
+
+<!-- Título separado con margen -->
+<h2 style="text-align:center; margin-top: 90px;">Accesorios</h2>
+
+
+  <div class="product-grid">
+
+    <!-- Producto 1 -->
+    <div>
+      <div class="product">
+        <img src=" https://musicvilla.com/cdn/shop/files/IMG_7264.jpg?v=1694636646&width=1800 " class="front" alt="Batería frontal 1">
+        <img src=" https://musicvilla.com/cdn/shop/files/IMG_7265.jpg?v=1694636647&width=540 " class="back" alt="Batería lateral 1">
+      </div>
+      <div class="product-name">cencerro x10</div>
+    </div>
+
+    <!-- Producto 2 -->
+    <div>
+      <div class="product">
+        <img src=" https://musicvilla.com/cdn/shop/products/OCJPF-3_1.jpg?v=1677027712&width=1800 " class="front" alt="Batería frontal 2">
+        <img src=" https://musicvilla.com/cdn/shop/products/OCJPF-3_2.jpg?v=1677027715&width=540 " class="back" alt="Batería lateral 2">
+      </div>
+      <div class="product-name">Cajon Peruano  c10</div>
+    </div>
+
+    <!-- Producto 3 -->
+    <div>
+      <div class="product">
+        <img src=" https://musicvilla.com/cdn/shop/files/FullSizeRender_47b72623-6a64-4786-a605-9e87f682ba09.heic?v=1737670342&width=1800 " class="front" alt="Batería frontal 3">
+        <img src=" https://musicvilla.com/cdn/shop/files/FullSizeRender_36f83fcd-113f-400b-8b5f-4d042e38b767.heic?v=1737670342&width=540 " class="back" alt="Batería lateral 3">
+      </div>
+      <div class="product-name">MXR Rockman analog tone procesador</div>
+    </div>
+
+    <!-- Producto 4 -->
+    <div>
+      <div class="product">
+        <img src=" https://musicvilla.com/cdn/shop/products/Photo-Jan-05_-1-27-05-PM.jpg?v=1605566993&width=1800 " alt= "Bateria frontal 4">
+        <img src=" https://musicvilla.com/cdn/shop/products/Photo-Jan-05_-1-27-16-PM.jpg?v=1605566993&width=540
+ " class="back" alt="Batería lateral 4">
+      </div>
+      <div class="product-name">Plumillas serie z</di>
+    </div>
+
+  </div>
+  
+
+
+
+
+
+
+  <div class="product-grid">
+
+    <!-- Producto 1 -->
+    <div>
+      <div class="product">
+        <img src=" https://musicvilla.com/cdn/shop/products/image_f9320479-0168-4eec-b865-a0ca7100a63b.jpg?v=1607113623&width=1800 " class="front" alt="Batería frontal 1">
+        <img src=" https://musicvilla.com/cdn/shop/products/image_cc4edf00-9d23-4f10-b7be-8b163cdb986b.jpg?v=1607113623&width=540 " class="back" alt="Batería lateral 1">
+      </div>
+      <div class="product-name">huevos de percusion</div>
+    </div>
+
+    <!-- Producto 2 -->
+    <div>
+      <div class="product">
+        <img src=" https://musicvilla.com/cdn/shop/products/image_57e29c2a-b5b7-4439-a510-010b527dff73.heic?v=1656618452&width=1800 " class="front" alt="Batería frontal 2">
+        <img src=" https://musicvilla.com/cdn/shop/products/image_f1427bee-61ee-42a3-8615-07c0f4a1e6b1.heic?v=1656618454&width=1800 " class="back" alt="Batería lateral 2">
+      </div>
+      <div class="product-name">platillos de bateria serie sx</div>
+    </div>
+
+    <!-- Producto 3 -->
+    <div>
+      <div class="product">
+        <img src=" https://musicvilla.com/cdn/shop/products/image_8b7e0702-4766-4d45-ba0a-1f1585dc1231.jpg?v=1642462594&width=1800 " class="front" alt="Batería frontal 3">
+        <img src=" https://musicvilla.com/cdn/shop/products/image_be361cdd-32b6-4742-a746-3abc4e38276e.jpg?v=1642462596&width=540 " class="back" alt="Batería lateral 3">
+      </div>
+      <div class="product-name"> Samba darami</div>
+    </div>
+
+    <!-- Producto 4 -->
+    <div>
+      <div class="product">
+        <img src=" https://musicvilla.com/cdn/shop/files/DTX_Multi12_1.jpg?v=1702472405&width=1800 " alt= "Bateria frontal 4">
+        <img src=" https://musicvilla.com/cdn/shop/files/DTX_Multi12_2.jpg?v=1702472404&width=1800 " class="back" alt="Batería lateral 4">
+      </div>
+      <div class="product-name">Drum pad DTX-multi 12</di>
+    </div>
+
+  </div>
+  
+
+
+
+
+<div class="hero">
+    <h1>Guitar Pass Elpida: ¡La forma más rápida y sencilla de aprender guitarra!</h1>
+    <p>¿Siempre has querido aprender a tocar la guitarra? ¿Buscas mejorar tus habilidades desde casa de manera fácil y divertida? ¡Bienvenido a Guitar Pass Elpida! Nuestra plataforma ofrece cursos diseñados para llevarte desde principiante hasta guitarrista avanzado con poco tiempo, esfuerzo o dinero.
+    Sea cual sea el motivo, ¡felicitaciones por descubrir Guitar Pass Elpida! Tu aventura con la guitarra está a punto de ser mucho más divertida y placentera gracias al enfoque intuitivo y sencillo (pero profundo) de Blaise. Desde principiantes hasta principiantes, Guitar Pass Elpida ofrece una variedad de cursos de guitarra diseñados para que puedas tocar diferentes estilos y técnicas con muy poco tiempo, esfuerzo y dinero. ¡Empieza hoy mismo por solo $10 al mes!
+
+Los cursos incluyen estudio de canciones, trucos de acordes, escalas y solos, rasgueo y ritmo, country picking, riffs de rock, fingerpicking, afinaciones abiertas, tríadas, el sistema de enjaulado, slide guitar, acordes de cejilla, fundamentos de blues y mucho más.</p>
+  </div>
+
+  <div class="section">
+    <h2>¿Nuevo en Guitar Pass Elpida?</h2>
+    <p>Explora en profundidad nuestra Serie de Cursos Fundamentales, o si lo prefieres, navega libremente por los contenidos. Aquí te mostramos cómo funciona el sitio:</p>
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/4s2vmk8p1AY" title="Cómo funciona Guitar Pass" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="section">
+    <h2>¿Qué incluye?</h2>
+
+    <div class="feature">
+      <img src="https://cdn.fs.teachablecdn.com/eoaE4vXvQauPbSJQrO9M" alt="Curso para principiantes">
+      <div class="feature-content">
+        <h3>¿Nuevo en la guitarra?</h3>
+        <p>Nuestra Serie de Cursos Fundamentales está diseñada para principiantes y te enseñará todo lo necesario para empezar: cómo sostener y afinar la guitarra, escribir tus propias canciones y tocar con amigos alrededor de una fogata. O prueba nuestros Videos de Inicio Rápido si prefieres comenzar de inmediato. Con estos cursos, tendrás la base perfecta para avanzar al siguiente nivel.</p>
+      </div>
+    </div>
+
+    <div class="feature">
+      <img src="https://cdn.fs.teachablecdn.com/VpPh4A2AQ2qGjuO3VRJq" alt="Cursos avanzados">
+      <div class="feature-content">
+        <h3>¿Ya tienes experiencia?</h3>
+        <p>Después de completar nuestros Cursos Fundamentales y la sección para principiantes, estarás listo para nuestros Cursos de Enfoque que te enseñarán desde trucos de acordes, técnicas de blues, fingerpicking, patrones pentatónicos mayores y menores, slide guitar, estudios de géneros y más. ¡Ideal para mejorar tus habilidades y conocimientos en la guitarra!</p>
+      </div>
+    </div>
+
+    <div class="feature">
+      <img src="https://cdn.fs.teachablecdn.com/waUKOaQty1dUNp5GHTw4" alt="Estudios de canciones populares">
+      <div class="feature-content">
+        <h3>¡Aprende canciones populares!</h3>
+        <p>Aprende a tocar algunas de tus canciones favoritas con nuestra serie de estudios de canciones populares, incluyendo temas de Michael Jackson, Tom Petty, The Beatles, Bob Marley y muchos más. Esta serie es una excelente manera de impresionar a tus amigos o mejorar tus propias composiciones.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="all-access">
+    <h3>PASE TODO ACCESO</h3>
+    <p>Obtén el PASE TODO ACCESO por solo $10/mes y accede instantáneamente a todos los cursos actuales (y futuros) de este programa. Registrarse es fácil y puedes cancelar en cualquier momento... pero ¿por qué lo harías por solo $10? ¡Feliz rasgueo!</p>
+    <a href="#" class="cta-button">OBTÉN TU PRUEBA GRATUITA DE 7 DÍAS</a>
+  </div>
+
+
+
+</body>
+    
+
+
+
+
+
+<footer>
+    <p>&copy; 2025 Elpida Academia Musical. Todos los derechos reservados.</p>
+            <nav class="mt-4">
+            <a href="#" class="mx-2 text-gray-400 hover:text-white">Términos y condiciones</a>
+            <a href="#" class="mx-2 text-gray-400 hover:text-white">Política de privacidad</a>
+            <a href="#" class="mx-2 text-gray-400 hover:text-white">Soporte</a>
+        </nav>
+</footer>
+
+
+
+
+
+
+    
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            }
+        });
+    </script>
+</body>
+</html>

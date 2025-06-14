@@ -1,0 +1,438 @@
+<!DOCTYPE html>  
+<html lang="es">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Elpida Music</title>
+
+  <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #d3d3d3, #f0f0f0); /* Gris claro */
+            color: #2c3e50;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: background-color 0.5s ease;
+        }
+
+        header {
+            background-color: #2ecc71;
+            padding: 2px;
+            color: white;
+            width: 100%;
+            border: 2px solid black;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        h1 {
+            margin: 1;
+            font-size: 3em;
+        }
+
+        .menu-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            background-color: #2ecc71;
+            padding: 10px 0;
+            margin-top: 10px;
+            text-align: center;
+            border: 2px solid black;
+            box-sizing: border-box;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            background-color: #2ecc71;
+            color: white;
+            padding: 10px 20px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .dropbtn:hover {
+            background-color: #27ae60;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 150px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .dropdown-content a {
+            color: #2c3e50;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 50px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #ffcc00;
+            text-align: center;
+            font-size: 2.5em;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #2ecc71;
+            padding: 10px;
+            color: white;
+            width: 100%;
+            text-align: center;
+            margin-top: auto;
+            border: 2px solid black;
+            box-sizing: border-box;
+        }
+
+        section {
+            margin: 40px 0;
+        }
+
+    
+
+
+
+        .image-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 250px; /* Altura fija para que todas las imágenes sean iguales */
+    overflow: hidden;
+}
+
+.table-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    display: block;
+}
+
+.image-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-align: center;
+    opacity: 0;  /* Ocultar texto por defecto */
+    transition: opacity 0.3s ease-in-out;
+}
+
+.image-container:hover .image-text {
+    opacity: 1;  /* Aparece al pasar el mouse */
+}
+
+}
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1 style="font-size: 75px;">Elpida Music</h1>
+</header>
+<div class="menu-container">
+    <div class="dropdown">
+        <button class="dropbtn">Menú</button>
+        <div class="dropdown-content">
+            <a href="Elpida Musical ensayo 6.html">principal</a>
+            <a href="pagina2elpida.html">Acerca de Elpida music</a>
+            <a href="pagina3elpida.html">Regístrate</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Productos</button>
+        <div class="dropdown-content">
+            <a href="Guitarras Elpida.html">Guitarras</a>
+            <a href="Pianos Elpida.html">Pianos</a>
+            <a href="Baterias Elpida.html">Baterías</a>
+            <a href="Instrumentos de Cuerda Elpida.html">violines</a>
+             <a href="instrumentos de viento Elpida.html">instrumentos de viento</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Clases</button>
+        <div class="dropdown-content">
+            <a href="pagina_guitarra.html">Clases de guitarra</a>
+            <a href="pagina_piano.html">Clases de piano</a>
+            <a href="pagina_bateria.html">Clases de batería</a>
+            <a href="pagina_violin.htm">Clases de violin</a>
+            <a href="pagina_canto.html">Clases de canto</a>
+            <a href="pagina_teoria.html">Clases de teoria musical</a>
+        </div>
+    </div>
+</div>
+
+          
+        
+
+<!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <style>
+    .carousel-inner img {
+      width: 100%;
+      height: 50%;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <br>
+  <div id="theCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicadores -->
+    <ol class="carousel-indicators">
+      <li data-target="#theCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#theCarousel" data-slide-to="1"></li>
+      <li data-target="#theCarousel" data-slide-to="2"></li>
+      <li data-target="#theCarousel" data-slide-to="3"></li>
+      <li data-target="#theCarousel" data-slide-to="4"></li>
+      <li data-target="#theCarousel" data-slide-to="5"></li>
+      <li data-target="#theCarousel" data-slide-to="6"></li>
+      <li data-target="#theCarousel" data-slide-to="7"></li>
+    </ol>
+
+    <style>
+  .carousel-inner img {
+    width: 100%; /* Ajusta el ancho al contenedor */
+    height: 500px; /* Altura fija para todas las imágenes */
+    object-fit: cover; /* Recorta la imagen manteniendo la proporción */
+  }
+</style>
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="C:\Users\Hp\Pictures\imagen1.jpg.jpeg" alt="suma.c">     
+       <div class="carousel-caption">
+        <h3>Aprende con nosotros</h3>
+        <p>Elpida</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="C:\Users\Hp\Pictures\imagen2.jpg.jpeg" alt="suma.c">
+      <div class="carousel-caption">
+        <h3>Siente la música</h3>
+        <p>Elpida</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="C:\Users\Hp\Pictures\imagen3.jpg.jpeg" alt="Pintura">
+      <div class="carousel-caption">
+        <h3>Haz tus sueños realidad</h3>
+        <p>Elpida</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="C:\Users\Hp\Pictures\imagen5.jpg.jpeg" alt="Diseño Gráfico">
+      <div class="carousel-caption">
+        <h3>Crea experiencias nuevas</h3>
+        <p>Epida</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+    
+
+    
+    
+
+
+
+    
+    <a class="left carousel-control" href="#theCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Anterior</span>
+    </a>
+    <a class="right carousel-control" href="#theCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Siguiente</span>
+    </a>
+  </div>
+</div>
+<div class="container">
+
+    <h2>¡Descubre tu Talento Musical!</h2>
+    <h4>Imagen interactiva</h4>
+    <img 
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-40xvTmbvB4WePmMgfwsCdFAvLZc_hf4CWQ&s" 
+        width="600" 
+        height="400" 
+        alt="Día de la Música" 
+        id="firstImage">
+    
+    <div class="introduccion">
+        <section id="about">
+        <h3>Sobre Nosotros</h3>
+        <p>En Elpida, creemos que la música es un lenguaje universal. Nuestro equipo de profesores experimentados está aquí para guiarte en tu viaje musical.</p>
+    </section>
+       
+        <img src="https://akamai.sscdn.co/gcs/cifra-blog/es/wp-content/uploads/2022/10/ee02943-dia-de-la-musica.webp" alt="Cursos de Música">
+    </div>
+       <h3>Inscríbete en la Elpida Academia Musical y aprenderás el arte musical de manera divertida.</h3>
+
+    <table style="width: 100%; margin: 20px 0; border-collapse: collapse;">
+    <tr>
+        <th style="background-color: #2ecc71; color: white; padding: 10px;"></th>
+        <th style="background-color: #2ecc71; color: white; padding: 10px;"></th>
+        <th style="background-color: #2ecc71; color: white; padding: 10px;"></th>
+    </tr>
+    <tr>
+        <td style="text-align: center; padding: 10px;">
+            <div class="table-title"></div>
+            <a href="pagina_guitarra.html">
+                <div class="image-container">
+                    <img src="https://academiamusicaproyecta.com.mx/wp-content/uploads/2021/05/acoustic-guitar-close-up-on-beautiful-colored-background-scaled.jpg" alt="imagen1" class="table-img">
+                    <div class="image-text">Aprende Guitarra</div>
+                </div>
+            </a>
+        </td>
+        <td style="text-align: center; padding: 10px;">
+            <div class="table-title"></div>
+            <a href="pagina_piano.html">
+                <div class="image-container">
+                    <img src="https://cdn.pixabay.com/photo/2018/06/29/01/47/piano-3505109_640.jpg" alt="imagen2" class="table-img">
+                    <div class="image-text">Domina el Piano</div>
+                </div>
+            </a>
+        </td>
+        <td style="text-align: center; padding: 10px;">
+            <div class="table-title"></div>
+            <a href="pagina_canto.html">
+                <div class="image-container">
+                    <img src="https://cdn.milenio.com/uploads/media/2018/09/02/concurso-de-canto-voces-en.jpg" alt="imagen3" class="table-img">
+                    <div class="image-text">Explora tu Voz</div>
+                </div>
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: center; padding: 10px;">
+            <div class="table-title"></div>
+            <a href="pagina_violin.html">
+                <div class="image-container">
+                    <img src="https://media.istockphoto.com/id/517324559/es/foto/viol%C3%ADn-en-estilo-vintage.jpg?s=612x612&w=0&k=20&c=UIjBcYar0eM4imzvYymIpssymGPtCloUXBFg1rJN4c4=" alt="imagen4" class="table-img">
+                    <div class="image-text">Toca el Violín</div>
+                </div>
+            </a>
+        </td>
+        <td style="text-align: center; padding: 10px;">
+            <div class="table-title"></div>
+            <a href="pagina_bateria.html">
+                <div class="image-container">
+                    <img src="https://img.freepik.com/foto-gratis/bateria-habitacion-oscura-hermosa-iluminacion-caja-platillos_169016-13869.jpg" alt="imagen5" class="table-img">
+                    <div class="image-text">Domina la Batería</div>
+                </div>
+            </a>
+        </td>
+        <td style="text-align: center; padding: 10px;">
+            <div class="table-title"></div>
+            <a href="pagina_teoria.html">
+                <div class="image-container">
+                    <img src="https://img.freepik.com/foto-gratis/fondo-musical-volumetrico-clave-sol-notas-generativas-ai_169016-29576.jpg" alt="imagen6" class="table-img">
+                    <div class="image-text">Aprende Teoría Musical</div>
+                </div>
+            </a>
+        </td>
+    </tr>
+</table>
+
+
+
+    <section id="contact">
+        <h3>Contacto</h3>
+        <p>¡Conéctate con nosotros para más información!</p>
+        <p>Email: info@elpida.com</p>
+        <p>Teléfono: 9621435693</p>
+    </section>  
+</div>
+
+<footer>
+    <p>&copy; 2024 Academia de Música Elpida. Todos los derechos reservados.</p>
+</footer>
+
+  
+
+<!-- Script para reiniciar el carrusel automáticamente -->
+<script>
+  $('#theCarousel').on('slid.bs.carousel', function () {
+    let $carouselItems = $('.carousel .item');
+    let $activeItem = $('.carousel .item.active');
+
+    if ($activeItem.is($carouselItems.last())) {
+      setTimeout(function () {
+        $('#theCarousel').carousel(0);
+      }, 2000); // Espera 2 segundos antes de reiniciar
+    }
+  });
+</script>
+
+</body>
+</html>
+b
+        
+       
+
+        
